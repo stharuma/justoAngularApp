@@ -10,6 +10,7 @@ import { DisplayListingComponent } from './listings/display-listing/display-list
 import { ListingService } from './listings/listing.service';
 import { ListingDetailsComponent } from './listings/listing-details/listing-details.component';
 import { CreateListingsComponent } from './listings/create-listings/create-listings.component';
+import { ListingFiterPipe } from './listings/listing-filter.pipe';
 
 const appRoutes:Routes=[
   {path: 'list', component:ListListingsComponent},
@@ -24,7 +25,8 @@ const appRoutes:Routes=[
     ListListingsComponent,
     DisplayListingComponent,
     ListingDetailsComponent,
-    CreateListingsComponent
+    CreateListingsComponent,
+    ListingFiterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,9 @@
-<div *ngFor="let listing of listings" >
+<div class='form-group'>
+  <input type="text" class="form-control"  placeholder="Search By Price" 
+   style="width:300px" [(ngModel)]="searchTerm" />
+</div>
+<div *ngFor="let listing of listings | listingFilter:searchTerm" >
   <div (click)="onClick(listing.id)" class="pointerCursor"> 
    <app-display-listing [listing]="listing" (notify)="handleNotify($event)"></app-display-listing>
   </div>
-  </div> 
+</div> 

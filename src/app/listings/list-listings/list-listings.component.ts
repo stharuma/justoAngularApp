@@ -12,6 +12,7 @@ export class ListListingsComponent implements OnInit {
 
   listings:Listing[];
   dataFromChild: Listing;
+  searchTerm: string;
   
   constructor( private _listingService :ListingService, private _router :Router) {
 

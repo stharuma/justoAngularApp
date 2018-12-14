@@ -1,0 +1,58 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{listing.price}} </h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-10">
+      <div class="row vertical-align">
+        <div class="col-xs-5">
+          <img class="imageClass" [src]="listing.photoPath" alt="">
+        </div>
+        <div class="col-xs-7">
+          <div class="row">
+            <div class="col-xs-6">
+              Street No
+            </div>
+            <div class="col-xs-6">
+              {{listing.streetNo}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Street
+            </div>
+            <div class="col-xs-6">
+              {{listing.streetName}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              City
+            </div>
+            <div class="col-xs-6">
+              {{listing.city}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Province
+            </div>
+            <div class="col-xs-6">
+              {{listing.province}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              Country
+            </div>
+            <div class="col-xs-6">
+              {{listing.country}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+</div>

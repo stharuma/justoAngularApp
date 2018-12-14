@@ -1,0 +1,66 @@
+<form #listingForm="ngForm" (ngSubmit)="saveListing()">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Create Listing </h3>
+    </div>
+    <div class="panel-body">
+      <div class="form-group" [class.has-error]="price.invalid && price.touched" [class.has-success]="price.valid">
+        <label for="price" class="control-label">Price</label>
+        <input required id="price" name="price" [(ngModel)]="listing.price" type="text" class="form-control" #price="ngModel">
+        <span class="help-block" *ngIf="price.invalid && price.touched">
+          Price is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="streetNo.invalid && streetNo.touched" [class.has-success]="streetNo.valid">
+        <label for="streetNo" class="control-label">Street Number</label>
+        <input required id="streetNo" name="streetNo" [(ngModel)]="listing.streetNo" type="text" class="form-control" #streetNo="ngModel">
+        <span class="help-block" *ngIf="streetNo.invalid && streetNo.touched">
+          Street number is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="streetName.invalid && streetName.touched" [class.has-success]="streetName.valid">
+        <label for="streetName" class="control-label">Street Name</label>
+        <input required id="streetName" name="streetName" [(ngModel)]="listing.streetName" type="text" class="form-control" #streetName="ngModel">
+        <span class="help-block" *ngIf="streetName.invalid && streetName.touched">
+          Street name is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="city.invalid && city.touched" [class.has-success]="city.valid">
+        <label for="city" class="control-label">City</label>
+        <input required id="city" name="city" [(ngModel)]="listing.city" type="text" class="form-control" #city="ngModel">
+        <span class="help-block" *ngIf="city.invalid && city.touched">
+          City name is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="province.invalid && province.touched" [class.has-success]="province.valid">
+        <label for="province" class="control-label">Province</label>
+        <input required id="province" name="province" [(ngModel)]="listing.province" type="text" class="form-control" #province="ngModel">
+        <span class="help-block" *ngIf="province.invalid && province.touched">
+          Province name is required
+        </span>
+      </div>
+      <div class="form-group" [class.has-error]="country.invalid && country.touched" [class.has-success]="country.valid">
+        <label for="country" class="control-label">Country</label>
+        <input required id="countryy" name="country" [(ngModel)]="listing.country" type="text" class="form-control" #country="ngModel">
+        <span class="help-block" *ngIf="country.invalid && country.touched">
+          City name is required
+        </span>
+      </div>
+       <div class="form-group">
+        <label for="photoPath">Photo Path</label>
+        <input id="photoPath" name="photoPath" [(ngModel)]="listing.photoPath" type="text" class="form-control">
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="togglePhotoPreview()" class="btn btn-primary">
+          {{previewPhoto?"Hide ":"Show "}}Preview
+        </button>
+      </div>
+      <div class="form-group">
+        <img [src]="listing.photoPath" height="200" width="200" *ngIf="previewPhoto" />
+      </div>
+      <div class="panel-footer">
+      <button type="submit" class="btn btn-primary" [disabled]="listingForm.invalid">Save</button>
+    </div>
+  </div>
+</div>
+</form>

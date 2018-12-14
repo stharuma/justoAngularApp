@@ -1,0 +1,5 @@
+<div *ngFor="let listing of listings" >
+  <div (click)="onClick(listing.id)" class="pointerCursor"> 
+   <app-display-listing [listing]="listing" (notify)="handleNotify($event)"></app-display-listing>
+  </div>
+  </div> 
